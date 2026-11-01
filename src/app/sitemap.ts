@@ -1,0 +1,46 @@
+import { MetadataRoute } from "next";
+import { siteConfig } from "@/config/site";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = siteConfig.url;
+  const now = new Date();
+
+  return [
+    {
+      url: baseUrl,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}#services`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}#solutions`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}#cloud-infra`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}#ai-engineering`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}#contact`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  ];
+}
